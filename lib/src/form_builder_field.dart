@@ -141,7 +141,7 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
       if (enabled || !_formBuilderState!.widget.skipDisabled) {
         _formBuilderState!.setInternalFieldValue(
           widget.name,
-          null != widget.valueTransformer
+          null != widget.valueTransformer && null != value
               ? widget.valueTransformer!(value)
               : value,
         );
